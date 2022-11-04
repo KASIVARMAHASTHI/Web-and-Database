@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,28 +11,30 @@
     <div>
         <div class="flexbox">
         <a href="login.html">login</a>
-        <a href=register.html >Register</a>
+        <a href="register.html" >Register</a>
         <a href="Notes.html">notes</a>
     </div>
       <h2>Enter Notes</h2>
         <table>
-            <form>
+            <form action="Notes.html" method="post" id="Notes">
                 <table class="center">
             <tr>
                 <td>Input form:
                     <td>
-                        <input type="text" name="Enter Notes">
+                        <input type="text" id="EnterNotes">
                     </td>               
                  </td>
             </tr>
             <tr>
                 <td>
-                    <input type="Submit" name="submit" value="Submit">                   
+                    <input type="submit" id="submit" name="submit" >                   
                </td>
-               
+               </tr>
+            </form>   
         </table>
         <hr>
         <img src="Images/vikings.jpg" id="images3" >
+        <script src="./main.js"></script>
     
 </body>
 </html>

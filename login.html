@@ -9,27 +9,27 @@
 <body>
     <div>
         <div class="flexbox">
-        <a href="login.html">login</a>
+        <a href="login.html" target="_blank">login</a>
         <a href=register.html >Register</a>
         <a href="Notes.html">notes</a>
     </div>
     
     <h2> Login Here</h2>
-        <form action="Login" method="post">
+        <form action="login.html" method="post" id="login">
              <table>
                 <form>
                     <table class="center">
                  <tr>
                      <td>Username/Email-id:</td>
                      <td>
-                         <input type="text" name="user">
+                         <input type="text" id="user">
 
                      </td>
                  </tr>
                  <tr>
                      <td>password:</td>
                      <td>
-                         <input type="password" name="User_pass"
+                         <input type="password" id="User_pass">
                      </td>
                  </tr>
                  <tr>
@@ -43,10 +43,8 @@
                 </table> 
                 <hr>
                 <img src="Images/cat.jfif" id="images1">
-    <p> 
 
-
-    </p></p>
+    <script src="./main.js"></script>
 
 </body>
 </html>

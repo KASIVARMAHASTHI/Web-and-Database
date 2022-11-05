@@ -56,6 +56,8 @@ function fun2(e)
     
     const user1=new User(firstname,lastname,email,password);
     console.log(user1);
+    document.getElementById("Register");
+    
 }
 
 function fun(e)
@@ -87,8 +89,8 @@ function fun(e)
     
     const user1=new User(email,password);
     console.log(user1);
+    document.getElementById("login").reset();
 }
-
 
 function fun3(e)
 {
@@ -111,4 +113,5 @@ class User{
 }
 const notes=new User(note);
 console.log(notes);
+document.getElementById("Notes").reset();
 }

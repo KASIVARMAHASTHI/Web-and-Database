@@ -115,3 +115,49 @@ const notes=new User(note);
 console.log(notes);
 document.getElementById("Notes").reset();
 }
+const loginDetails=document.getElementById("login_button");
+
+if(loginDetails) loginDetails.addEventListener('click',getUsers);
+
+function getUsers(){
+    fetch("http://localhost:3000/users/")
+    .then((res)=>res.json())
+    .then((data)=>{
+        console.log(data)
+        let ulist=document.getElementById("logindetails");
+
+        data.forEach((user)=>{
+            let li=document.createElement('li');
+            let text=document.createTextNode(user.userName);
+            li.appendChild(text);
+            ulist.appendChild(li);
+        })
+    })
+
+    .catch((err)=>console.log(`error! ${err}`));
+}
+
+const noteinfo=document.getElementById("Note_button");
+if(noteinfo) noteinfo.addEventListener('click',getAllNotes);
+
+ function getAllNotes(){
+    console.log("1");
+    fetch("http://localhost:3000/Note/")
+     .then((res)=>res.json())
+     .then((data)=>{
+         console.log(data);
+         let ulist=document.getElementById("Notedetails");
+
+         data.forEach((note)=>{
+             let li=document.createElement('li'); 
+             let text=document.createTextNode(note.Noteinputform);
+             li.appendChild(text);
+             ulist.appendChild(li);
+
+         })
+
+
+     })
+     .catch((err)=>console.log(`Error! ${err}`));
+    }
+

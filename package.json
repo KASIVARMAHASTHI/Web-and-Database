@@ -1,31 +1,18 @@
 {
-  "name": "project",
-  "version": "1.0.0",
-  "description": "kasi is a good boy.",
-  "main": "index.js",
-  "scripts": {
-    "dev":"nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KASIVARMAHASTHI/Web-and-Database.git"
-  },
-  "author": "kasivarma",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KASIVARMAHASTHI/Web-and-Database/issues"
-  },
-  "homepage": "https://github.com/KASIVARMAHASTHI/Web-and-Database#readme",
-  "keywords": [
-    "kasi",
-    "good"
-  ],
   "dependencies": {
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
     "nodemon": "^2.0.20"
-  }
+  },
+  "name": "kasiprojecrt",
+  "description": "This is a web app for creating a note. The users have to register and login with proper credentials to create a note.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kasi",
+  "license": "ISC"
 }

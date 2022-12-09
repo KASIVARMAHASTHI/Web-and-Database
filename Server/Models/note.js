@@ -1,17 +1,19 @@
-const con=require("./db_connect");                // we need this file because we need connection
+const con = require("./db_connect");                // we need this file because we need connection
 
 async function createTable(){
     let sql=`CREATE TABLE if not exists notes(
         noteID INT NOT NULL AUTO_INCREMENT,
-        note VARCHAR(100) NOT NULL UNIQUE,
+        note VARCHAR(255) NOT NULL UNIQUE,
         userID INT,
         CONSTRAINT notePK PRIMARY KEY(noteID),
         CONSTRAINT FOREIGN KEY (userID) REFERENCES users(userID)
+        
 
     );`
     await con.query(sql);                            // we need await when used async
 }
-
+//  
+//
 createTable();
 
 async function getAllNotes() {
@@ -24,11 +26,11 @@ async function getAllNotes() {
 
     let cNote=await getNote(note);
 
-
-    const sql=`INSERT INTO notes(note,userID) VALUES ("${note.note}",${user.userID});`
+    const sql=`INSERT INTO notes(note,userID) VALUES ("${note.note}",${note.userID});`
+    //const sql=`INSERT INTO notes(note) VALUES ("${note.note}");`
 
     await con.query(sql);
-
+    return cNote[0];
     
 }
 
@@ -42,9 +44,10 @@ async function getAllNotes() {
 }
 
 async function deleteNote(note){
-    let sql=`Delete from users where noteID=${note.noteID}`;
+    let sql=`Delete from notes where noteID=${note.noteID}`;
 
     await con.query(sql);
+
 }
 
 async function getNote(note){
@@ -61,20 +64,18 @@ async function getNote(note){
     return await con.query(sql);
 }
 
-const Notes= [
-    {
-      Noteinputform:11111,
-      
-    },
-    {
-      Noteinputform:22222,
-    },
-    {
-      Noteinputform:33333,
-    }
-  ];
-  
-  function getAllNotes() {
-    return Notes;
-  }
-  module.exports={getAllNotes,editNote,deleteNote};
+
+const notes=[{
+    noteId:1233,
+    notecontent:"Hello"
+},{
+    noteId:9383,
+    notecontent:"How r u??"
+},
+];
+
+function getNotes(){
+    return notes;
+}
+
+module.exports={getAllNotes,editNote,deleteNote,createNote};

@@ -10,7 +10,7 @@ async function createTable(){
         
 
     );`
-    await con.query(sql);                            // we need await when used async
+    await con.query(sql);                            
 }
 //  
 //

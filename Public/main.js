@@ -183,6 +183,7 @@ function create_n(e){
     let p = document.querySelector('.error');
     p.innerHTML = err.message;
   })
+  window.location.reload();
 }
 //////////////////////////////
 const usersBtn=document.getElementById("users-btn");

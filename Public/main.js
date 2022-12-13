@@ -23,7 +23,7 @@ class User{
         this.password=passcode_parameter;
     }
 }
-let loginform=document.getElementById("login_form");
+let loginform=document.getElementById("login");
 
 if(loginform) loginform.addEventListener('submit',create_u);
 
@@ -31,8 +31,8 @@ function create_u(e){
 
     e.preventDefault();
     
-    let username=document.getElementById('uname/email').value;
-    let password=document.getElementById('pass').value;
+    let username=document.getElementById('user').value;
+    let password=document.getElementById('User_pass').value;
 
     
     
@@ -44,7 +44,7 @@ function create_u(e){
     fetchData("/users/login", user, "POST")
         .then((data) => {
     setCurrentUser(data);
-    window.location.href = "note.html";
+    window.location.href = "Notes.html";
   })
   .catch((err) => {
     let p = document.querySelector('.error');
@@ -52,9 +52,9 @@ function create_u(e){
   }) 
 
 
-    let u=document.getElementById("uname/email");
+    let u=document.getElementById("user");
     u.value="";
-    let p=document.getElementById("pass");
+    let p=document.getElementById("User_pass");
     p.value="";
 }
 
@@ -100,7 +100,7 @@ class Register{
     }
 }
 
-const registerform=document.getElementById("register_form");
+const registerform=document.getElementById("Register");
 
 if(registerform) registerform.addEventListener('submit',create_r);
 
@@ -108,10 +108,10 @@ function create_r(e){
 
     e.preventDefault();
 
-    let firstname=document.getElementById("fname").value;
-    let lastname=document.getElementById("lname").value;
-    let userName=document.getElementById("uname/email").value;
-    let password=document.getElementById("pass").value;
+    let firstname=document.getElementById("user_Firstname").value;
+    let lastname=document.getElementById("user_Lastname").value;
+    let userName=document.getElementById("user_name").value;
+    let password=document.getElementById("User_pass").value;
 
     
 
@@ -122,20 +122,20 @@ function create_r(e){
     fetchData("/users/register",user , "POST")
   .then((data) => {
     setCurrentUser(data);
-    window.location.href = "note.html";
+    window.location.href = "Notes.html";
   })
   .catch((err) =>{
     let p = document.querySelector('.error');
     p.innerHTML = err.message;
   })
 
-    let f=document.getElementById("fname");
+    let f=document.getElementById("user_Firstname");
     f.value="";
-    let l=document.getElementById("lname");
+    let l=document.getElementById("user_Lastname");
     l.value="";
-    let u=document.getElementById("uname/email");
+    let u=document.getElementById("user_name");
     u.value="";
-    let p=document.getElementById("pass");
+    let p=document.getElementById("User_pass");
     p.value="";
 
 }
@@ -159,7 +159,7 @@ class Note{
 
 }
 
-const noteform=document.getElementById("note_form");
+const noteform=document.getElementById("Notes");
 
 if(noteform) noteform.addEventListener('submit',create_n);
 
@@ -167,7 +167,7 @@ function create_n(e){
 
     e.preventDefault();
 
-    let note1=document.getElementById("note_id").value;
+    let note1=document.getElementById("EnterNotes").value;
 
     const note=new Note(note1);
     console.log(note);
@@ -212,8 +212,8 @@ function getUsers(){
 
 
 
-const notesBtn=document.getElementById("notes-btn");
-if(notesBtn)notesBtn.addEventListener('click',getNotes);
+
+
 let user=getCurrentUser();
 
 if(user && noteform) getNotes();

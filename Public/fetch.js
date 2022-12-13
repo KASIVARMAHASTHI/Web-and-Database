@@ -72,5 +72,5 @@ export function getCurrentNote() {
 // logout function for current user
 export function removeCurrentNote() {
   localStorage.removeItem('note');
-  window.location.href = "note.html";
+  window.location.href = "Notes.html";
 }

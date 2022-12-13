@@ -3,7 +3,7 @@ const User=require('../models/user');
 const express=require('express');
 const router = express.Router();
 
-router.get('/',async (req,res)=>{
+router.post('/',async (req,res)=>{
     try{
       const notes=await Note.getNote(req.body);
         res.send(notes);

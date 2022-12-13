@@ -20,6 +20,7 @@ async function getAllNotes() {
     const sql = `SELECT * FROM notes;`;
     let notes = await con.query(sql);
     console.log(notes)
+    return await notes;
   }
 
   async function createNote(note){
@@ -78,4 +79,4 @@ function getNotes(){
     return notes;
 }
 
-module.exports={getAllNotes,editNote,deleteNote,createNote};
+module.exports={getAllNotes,editNote,deleteNote,createNote,getNote};

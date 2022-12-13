@@ -59,7 +59,7 @@ async function getNote(note){
 
     }
     else{
-        sql=`select * from notes where note="${note.note}"`;
+        sql=`select * from notes where userID=${note.userID}`;
     }
 
     return await con.query(sql);
@@ -79,4 +79,4 @@ function getNotes(){
     return notes;
 }
 
-module.exports={getAllNotes,editNote,deleteNote,createNote,getNote};
+module.exports={getAllNotes,createNote,editNote,deleteNote,getNote};

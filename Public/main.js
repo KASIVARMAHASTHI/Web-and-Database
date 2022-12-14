@@ -140,7 +140,6 @@ function create_r(e){
 
 }
 
-///////////////////////////////////////////////////////////////////////
 class Note{
 
     constructor(text){
@@ -185,12 +184,9 @@ function create_n(e){
   })
   window.location.reload();
 }
-//////////////////////////////
 const usersBtn=document.getElementById("users-btn");
 
 if(usersBtn)usersBtn.addEventListener('click',getUsers);
-
-
 
 function getUsers(){
     fetch("http://localhost:3000/users/")
@@ -236,7 +232,6 @@ if(user && noteform) getNotes();
      })
      .catch((err)=>console.log(`Error! ${err}`));
 
-     //window.location.href="note.html";
  }
 
  

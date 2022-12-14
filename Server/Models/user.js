@@ -33,7 +33,7 @@ async function register(user){
     return await login(user);
 }
 
-async function login(user){                // rename cathy as user
+async function login(user){                
     let cUser=await getUser(user);
 
     if(!cUser[0]) throw Error("Username not found");

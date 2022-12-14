@@ -1,4 +1,4 @@
-const con = require("./db_connect");                // we need this file because we need connection
+const con = require("./db_connect");               
 
 async function createTable(){
     let sql=`CREATE TABLE if not exists notes(
@@ -12,8 +12,7 @@ async function createTable(){
     );`
     await con.query(sql);                            
 }
-//  
-//
+
 createTable();
 
 async function getAllNotes() {
@@ -28,7 +27,6 @@ async function getAllNotes() {
     let cNote=await getNote(note);
 
     const sql=`INSERT INTO notes(note,userID) VALUES ("${note.note}",${note.userID});`
-    //const sql=`INSERT INTO notes(note) VALUES ("${note.note}");`
 
     await con.query(sql);
     return cNote[0];
@@ -67,10 +65,10 @@ async function getNote(note){
 
 
 const notes=[{
-    noteId:1233,
+    noteId:2345,
     notecontent:"Hello"
 },{
-    noteId:9383,
+    noteId:1234,
     notecontent:"How r u??"
 },
 ];

@@ -14,7 +14,7 @@ h2 {
     background-color: #a7f646;
     text-transform: uppercase;
     border: 5px solid rgb(228, 98, 104);
-    outline-style:dashed;
+    outline-style:double;
     outline-width: thick;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
